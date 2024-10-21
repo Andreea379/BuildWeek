@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+body{
+    margin: 0;
+    background-image: url(../bg.jpg);
+    background-size: 100%;
+    color: rgb(231, 228, 228);
+    padding-inline: 5rem;
+    padding-top: 2.5rem;
+    min-width: 60%;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+header{
+    text-align:left;
+}
+
+.epicode_logo{
+    width: 10rem;
+
+}
+h1{
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
