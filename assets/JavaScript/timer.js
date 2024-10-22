@@ -9,6 +9,6 @@ let x = setInterval(function(){
     let countDown =  Date().getTime();
     let distance = timer - countDown;
 
-    let s = Math.floor(distance  1000 * 60 / 1000)
+    let s = Math.floor(distance %  (1000 * 60) / 1000)
 })
 
