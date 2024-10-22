@@ -1,15 +1,14 @@
-let sec = document.getElementById('sec')
+let seconds = document.getElementsByTagName('div');
+let circle = document.getElementById('seconds');
+let iDontKnow = document.getElementsByClassName('seconds');
 
-let countDownValue = 60;
+let endDate = '00';
 
-const countDownActive = setInterval(() => {
-        if(countDownValue <= 0){
-            clearInterval(countDownActive);
-            document.getElementById("sec").innerHTML = "Finished";
-        }else{
-            document.getElementById("sec").innerHTML = countDownValue;
-        }
-        countDownValue -= 1
-    }, 1000)
-    
-ss.
+let x = setInterval(function(){
+    let timer = new Date(endDate).getTime();
+    let countDown =  Date().getTime();
+    let distance = timer - countDown;
+
+    let s = Math.floor(distance %  (1000 * 60) / 1000)
+})
+
