@@ -1,0 +1,61 @@
+main {
+  text-align: center;
+  padding-inline: 3rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+p {
+  font-family: "Outfit", "sans-serif";
+  font-size: 1.5rem;
+  color: rgb(228, 228, 228);
+  margin: 0;
+  margin-top: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.valutation {
+  margin-top: 0.5rem;
+  margin-bottom: 3.8rem;
+}
+
+.star-value {
+  margin-right: 0.4rem;
+}
+
+.textarea {
+  border-bottom: 2px solid;
+  border-bottom-color: #d20094;
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+#comment {
+  width: 90%;
+  background-color: transparent;
+  color: gray;
+  border-color: transparent;
+  border-bottom-color: transparent;
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  margin-top: 2rem;
+  font-weight: 800;
+  width: 20%;
+  background-color: #00ffff;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  border: none;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+button:hover {
+  cursor: pointer;
+}
