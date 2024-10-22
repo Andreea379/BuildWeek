@@ -1,14 +1,13 @@
-let sec = document.getElementById('sec')
 
 let countDownValue = 60;
 
-const countDownActive = setInterval(() => {
+let countDownActive = setInterval(function() {
         if(countDownValue <= 0){
             clearInterval(countDownActive);
-            document.getElementById("sec").innerHTML = "Finished";
+            document.getElementById('sec').innerHTML = "0";
         }else{
-            document.getElementById("sec").innerHTML = countDownValue;
+            document.getElementById('sec').innerHTML = countDownValue ;
         }
-        countDownValue -= 1
+        countDownValue = countDownValue - 1
     }, 1000);
     
