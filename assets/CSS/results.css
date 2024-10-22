@@ -1,24 +1,29 @@
 /*impostazioni generali*/
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 main,
 footer {
   text-align: center;
+  margin-top: 3rem;
 }
 
 a {
   text-decoration: none;
   color: rgb(231, 228, 228);
+  font-weight: 600;
+  font-size: 1rem;
 }
 button {
   background-color: transparent;
-  border: 1px solid rgb(231, 228, 228);
+  border: 2px solid rgb(231, 228, 228);
+  padding-inline: 3.5rem;
+  padding-block: 0.8rem;
 }
 h1 {
   font-size: 3.2rem;
   font-weight: 600;
   line-height: 78%;
   margin-bottom: 0;
+  margin-top: 1rem;
 }
 h3 {
   font-family: "Outfit", sans-serif;
@@ -26,4 +31,32 @@ h3 {
   line-height: 2.3rem;
   font-weight: 400;
   font-size: 1.4rem;
+}
+section {
+  padding: 20px;
+}
+.results {
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.results p {
+  max-width: 32%;
+  font-size: 0.8rem;
+  font-weight: 200;
+  text-align: center;
+}
+.results span {
+  color: #00ffff;
+}
+section {
+  margin-bottom: 2rem;
+}
+h2 {
+  font-family: "Outfit", sans-serif;
+  font-weight: normal;
+  font-size: 2.5rem;
+}
+.results div {
+  width: fit-content;
 }
