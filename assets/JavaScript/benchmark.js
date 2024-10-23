@@ -83,13 +83,17 @@ const questions = [
 
 window.onload = function () {
   h1.innerText = questionToInsert[0];
+  buttons[0].innerText = questions[0].correct_answer;
+  buttons[1].innerText = questions[0].incorrect_answers[0];
+  buttons[2].innerText = questions[0].incorrect_answers[1];
+  buttons[3].innerText = questions[0].incorrect_answers[2];
 };
 /*selezione elementi per cambiare domanda*/
 const form = document.querySelector("form");
 const h1 = document.querySelector("h1");
 const buttons = document.querySelectorAll("button"); /*è un array*/
 const answer = document.querySelectorAll(".risposta"); /*è un array*/
-
+console.log(answer);
 /* togliere il reset dei bottoni*/
 form.onsubmit = function (event) {
   event.preventDefault();
@@ -100,12 +104,20 @@ console.log(questionToInsert);
 const answerToInsert = questions.map((risposte) => risposte.correct_answer + " " + risposte.incorrect_answers);
 console.log(answerToInsert);
 /*cambio domanda effettivo*/
+
 let counter = 0;
-form.onclick = function () {
-  counter += 1;
-  console.log(counter);
-  h1.innerText = questionToInsert[counter];
-};
+for (let i = 0; i < buttons.length; i++) {
+  let button = buttons[i];
+  button.onclick = function (event) {
+    counter += 1;
+    console.log(counter, event.target);
+    h1.innerText = questionToInsert[counter];
+    buttons[0].innerText = questions[counter].correct_answer;
+    buttons[1].innerText = questions[counter].incorrect_answers[0];
+    buttons[2].innerText = questions[counter].incorrect_answers[1];
+    buttons[3].innerText = questions[counter].incorrect_answers[2];
+  };
+}
 
 /*
 form.onclick = function () {
