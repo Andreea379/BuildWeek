@@ -16,12 +16,23 @@ button {
   border: 2px solid rgb(231, 228, 228);
   padding-inline: 3.5rem;
   padding-block: 0.8rem;
+  cursor: pointer;
 }
+
+.circle {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 40px solid #00ffff;
+  width: 300px;
+  height: 300px;
+  padding: 2rem;
+}
+
 h1 {
   font-size: 3.2rem;
   font-weight: 600;
   line-height: 78%;
-  margin-bottom: 0;
+  margin-block: 0;
 }
 h3 {
   font-family: "Outfit", sans-serif;
@@ -32,29 +43,35 @@ h3 {
 }
 section {
   padding: 20px;
+
+  margin-bottom: 2rem;
 }
 .results {
   display: inline-block;
-  vertical-align: text-top;
+  vertical-align: middle;
 }
 
 .results p {
-  max-width: 32%;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   font-weight: 200;
   text-align: center;
+  display: inline-block;
 }
 .results span {
   color: #00ffff;
 }
-section {
-  margin-bottom: 2rem;
-}
+
 h2 {
   font-family: "Outfit", sans-serif;
   font-weight: normal;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
+  margin-inline: 4rem;
+  text-align: left;
 }
-.results div {
-  width: fit-content;
+#specialH2 {
+  text-align: right;
+}
+
+h4 {
+  font-size: 1.5rem;
 }
