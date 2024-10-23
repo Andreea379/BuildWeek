@@ -18,31 +18,29 @@
     height: 100%;
     fill: transparent;
     stroke-width: 8%;
-    stroke:#00FFFF;
-}
-
-.container svg circle:nth-child(2){
-    stroke: transparent ;
-    stroke-dasharray: 440;
-    stroke-dashoffset: 440;
-    animation: anim 2s linear forwards;
-}
-
-@keyframes anim {
-    0%{
-        top: 0%;
-    }
-    100%{
-        top: -5000px;
-    }
-}
-
-@keyframes stroke {
-    100%{
-        stroke-dashoffset: 0;
-    }
+    
     
 }
+
+.circle2{
+    stroke:#00FFFF;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 0;
+    animation: rotate 184s;
+}
+
+@keyframes rotate {
+    from{
+        stroke-dashoffset: 440;
+    stroke:#00FFFF;
+    }
+    to{
+        
+        stroke-dashoffset: 0;
+        
+    }
+}
+
 #time .container div{
     text-align: center;
     transform: translateY(-163%);

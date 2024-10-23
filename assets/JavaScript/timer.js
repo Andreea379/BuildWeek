@@ -10,14 +10,4 @@ let countDownActive = setInterval(function() {
         }
         countDownValue = countDownValue - 1;
     }, 1000);
-    
-
-
-    const ss = document.getElementById('sec');
-    const counter = 0;
-    
-setInterval(() => {
-    if(counter === 60){}
-    counter += 1;
-    ss.innerHTML = '${counter}%';
-}, 6000)
+   
