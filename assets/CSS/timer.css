@@ -6,6 +6,7 @@
 .container{
     width: 100%;
     height: 100%;;
+    
 }
 
 .container svg{
@@ -13,29 +14,33 @@
     height: 100%;
 }
 
-.container svg circle{
+.circle1, .circle2{
     width:100%;
     height: 100%;
     fill: transparent;
     stroke-width: 8%;
+    border:none;
     
-    
+}
+.circle1{
+    stroke:rgb(0, 255, 255);
 }
 
 .circle2{
-    stroke:#00FFFF;
     stroke-dasharray: 440;
     stroke-dashoffset: 0;
+    border:none;
+    fill: transparent;
     animation: rotate 184s;
+    stroke:#9a7e9a
 }
 
 @keyframes rotate {
     from{
         stroke-dashoffset: 440;
-    stroke:#00FFFF;
-    }
+        stroke:#9a7e9a}
     to{
-        
+        stroke:#9a7e9a
         stroke-dashoffset: 0;
         
     }
@@ -48,6 +53,7 @@
 
 P{
     font-size: 0.6rem;
+    color: black;
 }
 
 #sec{
