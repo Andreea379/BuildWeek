@@ -88,6 +88,7 @@ window.onload = function () {
 const form = document.querySelector("form");
 const h1 = document.querySelector("h1");
 const buttons = document.querySelectorAll("button"); /*è un array*/
+const answer = document.querySelectorAll(".risposta"); /*è un array*/
 
 /* togliere il reset dei bottoni*/
 form.onsubmit = function (event) {
@@ -96,9 +97,10 @@ form.onsubmit = function (event) {
 /*creazione di un array di stringhe contenenti le domande*/
 const questionToInsert = questions.map((domande) => domande.question);
 console.log(questionToInsert);
-
+const answerToInsert = questions.map((risposte) => risposte.correct_answer + " " + risposte.incorrect_answers);
+console.log(answerToInsert);
 /*cambio domanda effettivo*/
-let counter = 1;
+let counter = 0;
 form.onclick = function () {
   counter += 1;
   console.log(counter);
