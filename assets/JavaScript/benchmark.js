@@ -101,8 +101,7 @@ form.onsubmit = function (event) {
 /*creazione di un array di stringhe contenenti le domande*/
 const questionToInsert = questions.map((domande) => domande.question);
 console.log(questionToInsert);
-const answerToInsert = questions.map((risposte) => risposte.correct_answer + " " + risposte.incorrect_answers);
-console.log(answerToInsert);
+
 /*cambio domanda effettivo*/
 
 let counter = 0;
@@ -116,6 +115,10 @@ for (let i = 0; i < buttons.length; i++) {
     buttons[1].innerText = questions[counter].incorrect_answers[0];
     buttons[2].innerText = questions[counter].incorrect_answers[1];
     buttons[3].innerText = questions[counter].incorrect_answers[2];
+
+    if (buttons[i] === undefined) {
+      buttons[i].remove();
+    }
   };
 }
 
