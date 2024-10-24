@@ -32,6 +32,22 @@ button:hover {
 }
 
 footer p {
-  margin: 15%;
+  margin-top: 15%;
+  display: inline-block;
   font-size: 1.2rem;
+}
+
+.button_off {
+  visibility: hidden;
+}
+.button_on {
+  visibility: visible;
+}
+
+.linkTo {
+  display: inline-block;
+  color: aqua;
+  text-align: right;
+  margin-left: 7rem;
+  font-weight: 700;
 }

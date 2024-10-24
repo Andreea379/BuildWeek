@@ -1,16 +1,14 @@
 let countDownValue = 60;
 
-let countDownActive = setInterval(function() {
-        if(countDownValue <= 0){
-            clearInterval(countDownActive);
-            document.getElementById('sec').innerHTML = "0";
-        }else{
-            document.getElementById('sec').innerHTML = countDownValue ;
-        }
-        countDownValue = countDownValue - 1;
-    }, 1000);
-
-
+let countDownActive = setInterval(function () {
+  if (countDownValue <= 0) {
+    clearInterval(countDownActive);
+    document.getElementById("sec").innerHTML = "0";
+  } else {
+    document.getElementById("sec").innerHTML = countDownValue;
+  }
+  countDownValue = countDownValue - 1;
+}, 1000);
 
 const questions = [
   {
@@ -94,20 +92,30 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
+/*selezione elementi per cambiare domanda*/
+const form = document.querySelector("form");
+const h1 = document.querySelector("h1");
+const buttons = document.querySelectorAll("button"); /*è un array*/
+const footer = document.querySelector("footer");
+const footerIndex = document.querySelector("footer p");
 
+/* funzione al caricamento pagine*/
 window.onload = function () {
   h1.innerText = questionToInsert[0];
   buttons[0].innerText = questions[0].correct_answer;
   buttons[1].innerText = questions[0].incorrect_answers[0];
   buttons[2].innerText = questions[0].incorrect_answers[1];
   buttons[3].innerText = questions[0].incorrect_answers[2];
+  footerIndex.innerText = `QUESTION ${counter + 1}/10`;
 };
-/*selezione elementi per cambiare domanda*/
-const form = document.querySelector("form");
-const h1 = document.querySelector("h1");
-const buttons = document.querySelectorAll("button"); /*è un array*/
-const answer = document.querySelectorAll(".risposta"); /*è un array*/
-console.log(answer);
+
+/*creazione nuovi elementi da inserire nella pagina*/
+const linkToFeedback = document.createElement("a");
+
+linkToFeedback.href = "results.html";
+linkToFeedback.innerText = "RESULTS";
+linkToFeedback.className = "linkTo";
+
 /* togliere il reset dei bottoni*/
 form.onsubmit = function (event) {
   event.preventDefault();
@@ -121,18 +129,26 @@ console.log(questionToInsert);
 let counter = 0;
 for (let i = 0; i < buttons.length; i++) {
   let button = buttons[i];
-  button.onclick = function (event) {
+  button.onclick = function (e) {
     counter += 1;
-    console.log(counter, event.target);
-    h1.innerText = questionToInsert[counter];
-    buttons[0].innerText = questions[counter].correct_answer;
-    buttons[1].innerText = questions[counter].incorrect_answers[0];
-    buttons[2].innerText = questions[counter].incorrect_answers[1];
-    buttons[3].innerText = questions[counter].incorrect_answers[2];
+    if (counter > 0 && counter <= 9) {
+      h1.innerText = questionToInsert[counter];
+      buttons[0].innerText = questions[counter].correct_answer;
+      buttons[1].innerText = questions[counter].incorrect_answers[0];
+      buttons[2].innerText = questions[counter].incorrect_answers[1];
+      buttons[3].innerText = questions[counter].incorrect_answers[2];
+      footerIndex.innerText = `QUESTION ${counter + 1}/10`;
 
-    
+      if (buttons[i].textContent.includes("False")) {
+        buttons[2].classList = "button_off";
+        buttons[3].classList = "button_off";
+      } else {
+        buttons[2].classList = "button_on";
+        buttons[3].classList = "button_on";
+      }
+      console.log(counter);
+    } else if ((counter = 9)) {
+      footer.appendChild(linkToFeedback);
+    }
   };
 }
-
- 
-

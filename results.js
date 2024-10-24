@@ -1,3 +1,10 @@
+//a
+let risultato = {
+  totali: 10,
+  corrette: 7,
+  sbagliate: 3,
+};
+
 const doughnutLabel = {
   id: "doughnutLabel",
   beforeDraw: function (chart, args, pluginOptions) {
@@ -38,19 +45,28 @@ const doughnutLabel = {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
+  let text = "";
+  let colorSecondLine = "";
+  if (risultato.corrette >= risultato.sbagliate) {
+    text = "Congratulations!\nYou passed the exam.\n\nWe'll send you the certificate \nin few minutes. \nCheck your email (including\n promotions/spam folder)";
+    colorSecondLine = "#01FBFC";
+  } else {
+    text = "We are sorry\nYou failed the exam\n\nYou will be contacted by \nyour teacher in the next few days";
+    colorSecondLine = "#01FBFC";
+  }
+
   const chart = document.getElementById("chart");
-  let text =
-    "Congratulations!\nYou passed the exam.\n\nWe'll send you the certificate \nin few minutes. \nCheck your email (including\n promotions/spam folder)";
-  let colorSecondLine = "#01FBFC";
-  //let text = "We are sorry\nYou failed the exam\n\nYou will be contacted by \nyour teacher in the next few days";
-  //let colorSecondLine = "#C2128D";
+
+  const percentualiEsatte = (risultato.corrette / risultato.totali) * 100;
+  const percentualiErrate = (risultato.sbagliate / risultato.totali) * 100;
+
   new Chart(chart, {
     type: "doughnut",
     data: {
       labels: ["Wrong", "Correct"],
       datasets: [
         {
-          data: [50, 50],
+          data: [percentualiErrate, percentualiEsatte],
           backgroundColor: ["#C2128D", "#00FFFF"],
           borderColor: ["#C2128D", "#00FFFF"],
           borderWidth: 1,
@@ -76,8 +92,13 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     plugins: [doughnutLabel],
   });
-  // const percentualeCorrect = document.getElementById("percentualeCorrect");
-  // percentualeCorrect.innerText = "";
-});
+  const percentualeCorrect = document.getElementById("percentualeCorrect");
+  percentualeCorrect.innerText = percentualiEsatte + "%";
+  const percentualeWrong = document.getElementById("percentualeWrong");
+  percentualeWrong.innerText = percentualiErrate + "%";
 
-//1)
+  const answersCorrect = document.getElementById("questionCorrect");
+  answersCorrect.innerText = risultato.corrette + "/" + risultato.totali + " questions";
+  const answersWrong = document.getElementById("questionWrong");
+  answersWrong.innerText = risultato.sbagliate + "/" + risultato.totali + " questions";
+});
