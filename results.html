@@ -15,20 +15,27 @@
       <h1>Results</h1>
       <h3>The summary of your answers:</h3>
       <section>
-        <h2 class="results">Correct</h2>
         <div class="results">
-          <h4 class="results">
-            Congratulations <br />
-            <span class="results">You passed the exam</span>
-          </h4>
-          <br />
-          <p class="results">We'll send you the certificate in few minutes. Check your email (including promotion/ spam folder)</p>
+          <h2>Correct</h2>
+          <h4 id="percentualeCorrect">66.7%</h4>
+          <p>4/6 questions</p>
         </div>
-        <h2 class="results">Wrong</h2>
+
+        <div class="results">
+          <div class="graphic"><canvas id="chart"></canvas></div>
+        </div>
+        <div class="results">
+          <h2>Wrong</h2>
+          <h4>33.3%</h4>
+          <p>2/6 questions</p>
+        </div>
       </section>
     </main>
     <footer>
       <button><a href="#">RATE US</a></button>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script src="results.js"></script>
   </body>
 </html>
