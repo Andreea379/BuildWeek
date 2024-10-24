@@ -9,3 +9,6 @@ function isClicked(){
 const message = document.getElementById("message");
 message.style.color="#f54242";
 message.style.fontSize = "10px";
+
+document.getElementById("checkbox");
+console.dir('checkbox')
