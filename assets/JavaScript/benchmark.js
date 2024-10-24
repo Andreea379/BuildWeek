@@ -104,8 +104,14 @@ window.onload = function () {
 const form = document.querySelector("form");
 const h1 = document.querySelector("h1");
 const buttons = document.querySelectorAll("button"); /*è un array*/
-const answer = document.querySelectorAll(".risposta"); /*è un array*/
-console.log(answer);
+const footer = document.querySelector("footer");
+
+/*creazione nuovi elementi da inserire nella pagina*/
+const linkToFeedback = document.createElement("a");
+linkToFeedback.href = "results.html";
+linkToFeedback.innerText = "RESULTS";
+linkToFeedback.style.color = "white";
+
 /* togliere il reset dei bottoni*/
 form.onsubmit = function (event) {
   event.preventDefault();
@@ -121,7 +127,7 @@ for (let i = 0; i < buttons.length; i++) {
   let button = buttons[i];
   button.onclick = function (e) {
     counter += 1;
-    if (counter <= 9) {
+    if (counter > 0 && counter <= 9) {
       h1.innerText = questionToInsert[counter];
       buttons[0].innerText = questions[counter].correct_answer;
       buttons[1].innerText = questions[counter].incorrect_answers[0];
@@ -136,6 +142,8 @@ for (let i = 0; i < buttons.length; i++) {
         buttons[3].classList = "button_on";
       }
       console.log(counter);
+    } else if ((counter = 9)) {
+      footer.appendChild(linkToFeedback);
     }
   };
 }
