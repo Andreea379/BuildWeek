@@ -1,0 +1,83 @@
+const doughnutLabel = {
+  id: "doughnutLabel",
+  beforeDraw: function (chart, args, pluginOptions) {
+    const { ctx, data } = chart;
+    ctx.save();
+    const centerX = chart.width / 2;
+    const centerY = chart.height / 2 - 65;
+
+    const lines = pluginOptions.text.split("\n");
+    const fontSize = pluginOptions.fontSize || 12;
+    const lineHeight = pluginOptions.lineHeight || 1;
+    const boldFont = `${fontSize * 1.1}px sans-serif`;
+    const regularFont = `200 ${fontSize * 0.8}px sans-serif`;
+    ctx.shadowColor = pluginOptions.shadow;
+    ctx.shadowBlur = 20;
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 2;
+
+    ctx.textAlign = "center";
+
+    lines.forEach((line, index) => {
+      if (index < 2) {
+        ctx.font = boldFont;
+        if (index === 1) {
+          ctx.fillStyle = pluginOptions.colorSecondLine;
+        } else {
+          ctx.fillStyle = pluginOptions.color;
+        }
+      } else {
+        ctx.font = regularFont;
+        ctx.fillStyle = pluginOptions.color;
+      }
+      ctx.fillText(line, centerX, centerY + index * fontSize * lineHeight);
+    });
+
+    ctx.restore();
+  },
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  const chart = document.getElementById("chart");
+  let text =
+    "Congratulations!\nYou passed the exam.\n\nWe'll send you the certificate \nin few minutes. \nCheck your email (including\n promotions/spam folder)";
+  let colorSecondLine = "#01FBFC";
+  //let text = "We are sorry\nYou failed the exam\n\nYou will be contacted by \nyour teacher in the next few days";
+  //let colorSecondLine = "#C2128D";
+  new Chart(chart, {
+    type: "doughnut",
+    data: {
+      labels: ["Wrong", "Correct"],
+      datasets: [
+        {
+          data: [50, 50],
+          backgroundColor: ["#C2128D", "#00FFFF"],
+          borderColor: ["#C2128D", "#00FFFF"],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      cutout: "70%",
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: false,
+        },
+        doughnutLabel: {
+          fontFamily: "Outfit, sans-serif",
+          fontSize: 13,
+          lineHeight: 1.5,
+          color: "white",
+          colorSecondLine: colorSecondLine,
+          text: text,
+        },
+      },
+    },
+    plugins: [doughnutLabel],
+  });
+  // const percentualeCorrect = document.getElementById("percentualeCorrect");
+  // percentualeCorrect.innerText = "";
+});
+
+//1)
