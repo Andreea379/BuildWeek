@@ -14,7 +14,7 @@ stars.forEach((star, index) => {
 });
 
 // Per memorizzare la valutazione corrente
-let currentRating = -1;
+let currentRating = -1; //salvato
 
 function fillStars(index) {
   stars.forEach((star, i) => {
