@@ -1,3 +1,4 @@
+//a
 let risultato = {
   totali: 10,
   corrette: 7,
