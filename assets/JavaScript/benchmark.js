@@ -1,16 +1,14 @@
 let countDownValue = 60;
 
-let countDownActive = setInterval(function() {
-        if(countDownValue <= 0){
-            clearInterval(countDownActive);
-            document.getElementById('sec').innerHTML = "0";
-        }else{
-            document.getElementById('sec').innerHTML = countDownValue ;
-        }
-        countDownValue = countDownValue - 1;
-    }, 1000);
-
-
+let countDownActive = setInterval(function () {
+  if (countDownValue <= 0) {
+    clearInterval(countDownActive);
+    document.getElementById("sec").innerHTML = "0";
+  } else {
+    document.getElementById("sec").innerHTML = countDownValue;
+  }
+  countDownValue = countDownValue - 1;
+}, 1000);
 
 const questions = [
   {
@@ -130,9 +128,12 @@ for (let i = 0; i < buttons.length; i++) {
     buttons[2].innerText = questions[counter].incorrect_answers[1];
     buttons[3].innerText = questions[counter].incorrect_answers[2];
 
-    
+    if (buttons[i].textContent.includes("False")) {
+      buttons[2].classList = "button_off";
+      buttons[3].classList = "button_off";
+    } else {
+      buttons[2].classList = "button_on";
+      buttons[3].classList = "button_on";
+    }
   };
 }
-
- 
-

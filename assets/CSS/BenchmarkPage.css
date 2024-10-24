@@ -35,3 +35,10 @@ footer p {
   margin: 15%;
   font-size: 1.2rem;
 }
+
+.button_off {
+  visibility: hidden;
+}
+.button_on {
+  visibility: visible;
+}
