@@ -92,25 +92,29 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
+/*selezione elementi per cambiare domanda*/
+const form = document.querySelector("form");
+const h1 = document.querySelector("h1");
+const buttons = document.querySelectorAll("button"); /*è un array*/
+const footer = document.querySelector("footer");
+const footerIndex = document.querySelector("footer p");
 
+/* funzione al caricamento pagine*/
 window.onload = function () {
   h1.innerText = questionToInsert[0];
   buttons[0].innerText = questions[0].correct_answer;
   buttons[1].innerText = questions[0].incorrect_answers[0];
   buttons[2].innerText = questions[0].incorrect_answers[1];
   buttons[3].innerText = questions[0].incorrect_answers[2];
+  footerIndex.innerText = `QUESTION ${counter + 1}/10`;
 };
-/*selezione elementi per cambiare domanda*/
-const form = document.querySelector("form");
-const h1 = document.querySelector("h1");
-const buttons = document.querySelectorAll("button"); /*è un array*/
-const footer = document.querySelector("footer");
 
 /*creazione nuovi elementi da inserire nella pagina*/
 const linkToFeedback = document.createElement("a");
+
 linkToFeedback.href = "results.html";
 linkToFeedback.innerText = "RESULTS";
-linkToFeedback.style.color = "white";
+linkToFeedback.className = "linkTo";
 
 /* togliere il reset dei bottoni*/
 form.onsubmit = function (event) {
@@ -133,6 +137,7 @@ for (let i = 0; i < buttons.length; i++) {
       buttons[1].innerText = questions[counter].incorrect_answers[0];
       buttons[2].innerText = questions[counter].incorrect_answers[1];
       buttons[3].innerText = questions[counter].incorrect_answers[2];
+      footerIndex.innerText = `QUESTION ${counter + 1}/10`;
 
       if (buttons[i].textContent.includes("False")) {
         buttons[2].classList = "button_off";
