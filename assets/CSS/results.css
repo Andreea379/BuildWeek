@@ -41,6 +41,7 @@ h3 {
   font-weight: 400;
   font-size: 1.4rem;
 }
+
 section {
   padding: 20px;
 
@@ -48,14 +49,25 @@ section {
 }
 .results {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: text-top;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.results h4 {
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+  line-height: 4rem;
 }
 
 .results p {
   font-size: 1.2rem;
-  font-weight: 200;
-  text-align: center;
-  display: inline-block;
+  font-weight: 300;
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+  line-height: 1rem;
 }
 .results span {
   color: #00ffff;
@@ -78,4 +90,23 @@ h4 {
 
 .container {
   display: inline-block;
+}
+
+.results h2 {
+  padding-top: 70px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 2rem;
+}
+
+.graphic {
+  box-shadow: 0 0 10px black;
+  border-radius: 50%;
+}
+
+#chart {
+  box-shadow: 0 0 10px black;
+  border-radius: 50%;
+  box-shadow: inset 0 0 120px black;
 }

@@ -27,12 +27,11 @@ let countDownActive = setInterval(function() {
 
 
 
-     /* *************************il seguente codice ricarica la pagina quando l'utente a cliccato il bottone************/
+     /* *************************il seguente codice ricarica la pagina quando l'utente a clicca il bottone************/
     
-     /*const refresh = document.getElementById("refresh");
+     const refresh = document.getElementById("refresh");
 
     function handleClick() {
     window.location.reload();
     }
     refresh.addEventListener("click", handleClick);
-*/

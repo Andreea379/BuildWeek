@@ -1,3 +1,17 @@
+let countDownValue = 60;
+
+let countDownActive = setInterval(function() {
+        if(countDownValue <= 0){
+            clearInterval(countDownActive);
+            document.getElementById('sec').innerHTML = "0";
+        }else{
+            document.getElementById('sec').innerHTML = countDownValue ;
+        }
+        countDownValue = countDownValue - 1;
+    }, 1000);
+
+
+
 const questions = [
   {
     category: "Science: Computers",
@@ -116,27 +130,9 @@ for (let i = 0; i < buttons.length; i++) {
     buttons[2].innerText = questions[counter].incorrect_answers[1];
     buttons[3].innerText = questions[counter].incorrect_answers[2];
 
-    if (buttons[i] === undefined) {
-      buttons[i].remove();
-    }
+    
   };
 }
 
-/*
-form.onclick = function () {
-  let questionOnly = 0;
-  for (let i = 0; i < questions.length; i++) {
+ 
 
-    questionOnly = questions[i].question; /* abbiamo ciclato le domande che appaiano in console una per una
-
-    h1.innerText = questionOnly  /*qua mi cambia ma registra solo l'ultima domanda*/
-
-/*const questRandom = function () {
-  questions.forEach((quest, index) => {
-    h1.onclick = function () {};
-    h1.addEventListener("click", function () {});
-  });
-
-  /*for (let i = 0; i < questions.length; i++) {
-    const questionOnly = questions[i].question;
-    h1.innerText = questionOnly;*/
