@@ -119,21 +119,23 @@ console.log(questionToInsert);
 let counter = 0;
 for (let i = 0; i < buttons.length; i++) {
   let button = buttons[i];
-  button.onclick = function (event) {
+  button.onclick = function (e) {
     counter += 1;
-    console.log(counter, event.target);
-    h1.innerText = questionToInsert[counter];
-    buttons[0].innerText = questions[counter].correct_answer;
-    buttons[1].innerText = questions[counter].incorrect_answers[0];
-    buttons[2].innerText = questions[counter].incorrect_answers[1];
-    buttons[3].innerText = questions[counter].incorrect_answers[2];
+    if (counter <= 9) {
+      h1.innerText = questionToInsert[counter];
+      buttons[0].innerText = questions[counter].correct_answer;
+      buttons[1].innerText = questions[counter].incorrect_answers[0];
+      buttons[2].innerText = questions[counter].incorrect_answers[1];
+      buttons[3].innerText = questions[counter].incorrect_answers[2];
 
-    if (buttons[i].textContent.includes("False")) {
-      buttons[2].classList = "button_off";
-      buttons[3].classList = "button_off";
-    } else {
-      buttons[2].classList = "button_on";
-      buttons[3].classList = "button_on";
+      if (buttons[i].textContent.includes("False")) {
+        buttons[2].classList = "button_off";
+        buttons[3].classList = "button_off";
+      } else {
+        buttons[2].classList = "button_on";
+        buttons[3].classList = "button_on";
+      }
+      console.log(counter);
     }
   };
 }
