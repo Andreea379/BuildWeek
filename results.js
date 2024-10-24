@@ -1,7 +1,7 @@
 let risultato = {
   totali: 10,
-  corrette: 6,
-  sbagliate: 4,
+  corrette: 7,
+  sbagliate: 3,
 };
 
 const doughnutLabel = {
@@ -46,7 +46,7 @@ const doughnutLabel = {
 document.addEventListener("DOMContentLoaded", function () {
   let text = "";
   let colorSecondLine = "";
-  if (risultato.corrette > risultato.sbagliate) {
+  if (risultato.corrette >= risultato.sbagliate) {
     text = "Congratulations!\nYou passed the exam.\n\nWe'll send you the certificate \nin few minutes. \nCheck your email (including\n promotions/spam folder)";
     colorSecondLine = "#01FBFC";
   } else {
