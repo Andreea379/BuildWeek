@@ -36,10 +36,14 @@ ul li {
 span {
   font-weight: 700;
 }
-form {
-  font-weight: 600;
-  display:inline-block;
-  max-width: 35%;
+
+div{
+  max-height: 20px;
+}
+
+
+label{
+  display: inline-block;
 }
 
 button {
@@ -57,4 +61,16 @@ button {
 
 #message{
   display: inline-block;
+}
+
+#checkbox {
+  margin-top: 10px;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+}
+
+#checkbox:checked {
+  background-color: white; 
 }
