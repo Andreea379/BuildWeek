@@ -1,5 +1,9 @@
 // Seleziona tutte le stelle
 const stars = document.querySelectorAll(".star-value");
+const comment = document.getElementById("comment");
+const starError = document.getElementById("star-error");
+const commentError = document.getElementById("comment-error");
+const submitButton = document.getElementById("submit-btn");
 
 // Aggiungi interattività alle stelle
 stars.forEach((star, index) => {
@@ -23,6 +27,7 @@ function fillStars(index) {
     } else {
       star.classList.remove("filled");
     }
+    starError.style.display = "none";
   });
 }
 
@@ -34,3 +39,28 @@ function setRating(index) {
   currentRating = index;
   fillStars(index);
 }
+
+submitButton.addEventListener("click", (event) => {
+  let isValid = true;
+
+  // Verifica se una stella è stata selezionata
+  if (currentRating === -1) {
+    starError.style.display = "block";
+    isValid = false;
+  }
+
+  // Verifica se il commento è stato inserito
+  if (comment.value.trim() === "") {
+    commentError.style.display = "block";
+    isValid = false;
+  } else {
+    commentError.style.display = "none";
+  }
+
+  // Se uno dei campi non è valido, impedisce l'invio del form
+  if (!isValid) {
+    event.preventDefault(); // Blocca l'invio del form se non valido
+  } else {
+    alert("Grazie per averci detto come la pensi! Il tuo feedback è stato inviato con successo");
+  }
+});

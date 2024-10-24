@@ -15,23 +15,23 @@ let countDownActive = setInterval(function() {
 /****************************il seguente codice ricarica la pagina anche se l'utente non ha cliccato nessun bottone,
                                      ma il tempo che aveva a disposizine è scaduto.*********************************/
     
-    /* function refresh() {
+ /*   function refresh() {
          
              window.location.reload(true);
-        
+
              setTimeout(refresh, 60000);
      }
 
      setTimeout(refresh, 60000);
-
+*/
 
 
 
      /* *************************il seguente codice ricarica la pagina quando l'utente a clicca il bottone************/
     
-     const refresh = document.getElementById("refresh");
+    /*const refresh = document.getElementById("refresh");
 
     function handleClick() {
-    window.location.reload();
+        window.location.reload();
     }
-    refresh.addEventListener("click", handleClick);
+    refresh.addEventListener("click", handleClick);*/
