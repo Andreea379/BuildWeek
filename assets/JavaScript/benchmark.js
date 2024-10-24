@@ -129,15 +129,10 @@ for (let i = 0; i < buttons.length; i++) {
     buttons[1].innerText = questions[counter].incorrect_answers[0];
     buttons[2].innerText = questions[counter].incorrect_answers[1];
     buttons[3].innerText = questions[counter].incorrect_answers[2];
-    clearTimeout(countDownActive);
+
     
   };
 }
-/*
-document.querySelectorAll(".risposta");
-console.log("NodeList")
-const handleClick = () => {
-  
-  window.location.reload();
-}*/
+
+ 
 

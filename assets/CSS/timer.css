@@ -47,7 +47,7 @@
         stroke:#9a7e9a}
     to{
         stroke:#9a7e9a
-        stroke-dashoffset;
+        stroke-dashoffset: 0;
         
     }
 }
