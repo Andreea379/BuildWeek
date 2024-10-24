@@ -6,6 +6,7 @@ main {
 h1 {
   font-size: 3rem;
   margin: 0;
+  margin-top: 3rem;
 }
 
 p {
@@ -24,14 +25,25 @@ p {
 
 .star-value {
   margin-right: 0.4rem;
+  cursor: pointer;
+  fill: #0c0f29;
+  transition: fill 0.2s;
+}
+
+.star-value.filled {
+  fill: #00ffff;
+}
+
+.star-value:hover {
+  cursor: pointer;
 }
 
 .textarea {
   border-bottom: 2px solid;
   border-bottom-color: #d20094;
-  width: 100%;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 #comment {
