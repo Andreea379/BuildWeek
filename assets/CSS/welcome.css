@@ -38,17 +38,23 @@ span {
 }
 form {
   font-weight: 600;
+  display:inline-block;
+  max-width: 35%;
 }
 
 button {
   font-weight: 800;
-  width: 20%;
+  width: 15%;
   background-color: #00ffff;
-  margin-left: 20%;
+  margin-left: 40%;
   padding-left: 0.9rem;
   padding-right: 0.9rem;
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
   border: none;
   box-shadow: 0 0 15px #00ffff;
+}
+
+#message{
+  display: inline-block;
 }
