@@ -38,7 +38,7 @@ footer p {
 }
 
 .button_off {
-  visibility: hidden;
+  display: none;
 }
 .button_on {
   visibility: visible;
