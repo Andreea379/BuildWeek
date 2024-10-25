@@ -88,6 +88,14 @@ const buttons = document.querySelectorAll("button"); /*è un array*/
 const footer = document.querySelector("footer");
 const footerIndex = document.querySelector("footer p");
 
+// formazione array per registrare risposte
+const answers = {
+  corrects: [],
+  wrongs: [],
+};
+
+//funzione per registrare le risposte
+
 /* funzione al caricamento pagine*/
 window.onload = function () {
   h1.innerText = questionToInsert[0];
@@ -119,6 +127,7 @@ let counter = 0;
 for (let i = 0; i < buttons.length; i++) {
   let button = buttons[i];
   button.onclick = function (e) {
+    console.log(e.target.textContent);
     counter += 1;
     if (counter > 0 && counter <= 9) {
       h1.innerText = questionToInsert[counter];
@@ -139,7 +148,20 @@ for (let i = 0; i < buttons.length; i++) {
     } else if ((counter = 9)) {
       footer.appendChild(linkToFeedback);
     }
+<<<<<<< HEAD
 
+=======
+    const countingAnswer = function (array) {
+      if (e.target.textContent === array[counter].correct_answer) {
+        answers.corrects.push(e.target.textContent);
+      } else {
+        answers.wrongs.push(e.target.textContent);
+      }
+      return answers;
+    };
+
+    console.log(countingAnswer(questions));
+>>>>>>> 1a19fd2e89b5fc53b82d15ac2766f27683f73d65
   };
 }
 

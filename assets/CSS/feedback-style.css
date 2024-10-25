@@ -19,16 +19,22 @@ p {
 }
 
 #star-error {
-  color: #d20094;
+  color: rgb(175, 0, 0);
   display: none;
   font-size: small;
   margin-top: 0;
 }
 
 #comment-error {
-  color: #d20094;
+  color: rgb(175, 0, 0);
   display: none;
   font-size: small;
+}
+
+#error {
+  color: rgb(175, 0, 0);
+  font-size: smaller;
+  display: none;
 }
 
 .valutation {

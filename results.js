@@ -102,3 +102,4 @@ document.addEventListener("DOMContentLoaded", function () {
   const answersWrong = document.getElementById("questionWrong");
   answersWrong.innerText = risultato.sbagliate + "/" + risultato.totali + " questions";
 });
+console.log(answers);
