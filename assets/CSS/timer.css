@@ -15,9 +15,10 @@
     text-align: right;
 }
 
-.container svg{
+.svg{
     width: 100%;
     height: 100%;
+    
 }
 
 .circle1, .circle2{
@@ -34,11 +35,13 @@
 
 .circle2{
     stroke-dasharray: 440;
-    stroke-dashoffset: 0;
     border:none;
     fill: transparent;
-    animation: rotate 184s;
-    stroke:#9a7e9a
+    /* animation: rotate 184s linear infinite; */
+    animation: rotate 184s; /*, reset s;*/
+    /* animation: rotate 184s ease-in-out infinite; */
+    stroke:#9a7e9a;
+
 }
 
 @keyframes rotate {
@@ -47,10 +50,21 @@
         stroke:#9a7e9a}
     to{
         stroke:#9a7e9a
-        stroke-dashoffset: 0;
+        stroke-dashoffset;
         
     }
 }
+/* 
+@keyframes reset{
+    from{
+        stroke-dashoffset: 440;
+        stroke:#9a7e9a}
+    to{
+        stroke:#9a7e9a
+        stroke-dashoffset;
+        
+    }
+} */
 
 #time .container div{
     text-align: center;
