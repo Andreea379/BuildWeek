@@ -42,6 +42,8 @@ function setRating(index) {
 
 submitButton.addEventListener("click", (event) => {
   let isValid = true;
+  starError.style.display = "none";
+  commentError.style.display = "none";
 
   // Verifica se una stella è stata selezionata
   if (currentRating === -1) {
@@ -52,15 +54,23 @@ submitButton.addEventListener("click", (event) => {
   // Verifica se il commento è stato inserito
   if (comment.value.trim() === "") {
     commentError.style.display = "block";
+    commentError.textContent = "Please let us know what you think of us!";
     isValid = false;
-  } else {
-    commentError.style.display = "none";
+  } else if (comment.value.length < 20) {
+    commentError.style.display = "Block";
+    commentError.textContent = "The comment must be between 20 and 100 characters!";
+    isValid = false;
+  } else if (comment.value.length > 100) {
+    commentError.style.display = "Block";
+    commentError.textContent = "The comment must be between 20 and 100 characters!";
+    isValid = false;
   }
 
   // Se uno dei campi non è valido, impedisce l'invio del form
   if (!isValid) {
+    // Il -!- davanti ad un isValid che si aspetta sempre un valore booleano lo fa diventare FALSO in questo caso (noi abbiamo già un let isValid = true)
     event.preventDefault(); // Blocca l'invio del form se non valido
   } else {
-    alert("Grazie per averci detto come la pensi! Il tuo feedback è stato inviato con successo");
+    alert("Thank you for telling us how you feel about us! Your feedback was sent successfully");
   }
 });
