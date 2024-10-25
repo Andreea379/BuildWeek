@@ -161,3 +161,39 @@ for (let i = 0; i < buttons.length; i++) {
     countingAnswer(questions);
   };
 }
+
+/**************************************      TIMER    ******************************** */
+
+let countDownValue = 60;
+
+let countDownActive;
+
+let avvioTimer = function () {
+  clearInterval(countDownActive);
+  countDownValue = 60;
+  document.getElementById("sec").innerHTML = countDownValue;
+
+  countDownActive = setInterval(function () {
+    if (countDownValue <= 0) {
+      clearInterval(countDownActive);
+      document.getElementById("sec").innerHTML = "0";
+    } else if (countDownValue <= 60) {
+      document.getElementById("sec").innerHTML = countDownValue;
+      countDownValue = countDownValue - 1;
+    }
+  }, 1000);
+};
+
+const circle2 = document.querySelector(".circle2");
+
+for (let i = 0; i < buttons.length; i++) {
+  const singleButton = buttons[i];
+  singleButton.addEventListener("click", avvioTimer);
+  singleButton.addEventListener("click", () => {
+    circle2.style.animation = "none";
+    circle2.offsetHeight;
+    circle2.style.animation = "";
+  });
+  clearInterval();
+}
+avvioTimer();
