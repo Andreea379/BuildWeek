@@ -93,9 +93,10 @@
         </div>
         <p>Leave us an open feedback about your experience so far</p>
         <div class="textarea">
-          <input name="comment" id="comment" type="text" placeholder="Write your comment here" rows="1" cols="40rem" minlength="20" maxlength="100" required />
+          <input name="comment" id="comment" type="text" placeholder="Write your comment here" rows="3" cols="40rem" required /><br />
+          <span id="error">The comment must be between 20 and 100 characters!</span>
         </div>
-        <p id="comment-error">Please tell us what you think!</p>
+        <p id="comment-error"></p>
         <div>
           <button id="submit-btn" type="submit">SEND IT</button>
         </div>
