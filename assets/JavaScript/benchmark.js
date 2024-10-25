@@ -1,15 +1,3 @@
-let countDownValue = 60;
-
-let countDownActive = setInterval(function () {
-  if (countDownValue <= 0) {
-    clearInterval(countDownActive);
-    document.getElementById("sec").innerHTML = "0";
-  } else {
-    document.getElementById("sec").innerHTML = countDownValue;
-  }
-  countDownValue = countDownValue - 1;
-}, 1000);
-
 const questions = [
   {
     category: "Science: Computers",
@@ -130,16 +118,17 @@ form.onsubmit = function (event) {
 };
 /*creazione di un array di stringhe contenenti le domande*/
 const questionToInsert = questions.map((domande) => domande.question);
-console.log(questionToInsert);
 
 /*cambio domanda effettivo*/
-
+console.log(buttons);
 let counter = 0;
 for (let i = 0; i < buttons.length; i++) {
   let button = buttons[i];
+  console.log();
+
   button.onclick = function (e) {
-    console.log(e.target.textContent);
     counter += 1;
+
     if (counter > 0 && counter <= 9) {
       h1.innerText = questionToInsert[counter];
       buttons[0].innerText = questions[counter].correct_answer;
@@ -147,27 +136,28 @@ for (let i = 0; i < buttons.length; i++) {
       buttons[2].innerText = questions[counter].incorrect_answers[1];
       buttons[3].innerText = questions[counter].incorrect_answers[2];
       footerIndex.innerText = `QUESTION ${counter + 1}/10`;
-
-      if (buttons[i].textContent.includes("False")) {
-        buttons[2].classList = "button_off";
-        buttons[3].classList = "button_off";
-      } else {
-        buttons[2].classList = "button_on";
-        buttons[3].classList = "button_on";
-      }
-      console.log(counter);
-    } else if ((counter = 9)) {
+    } else if (counter === 10) {
       footer.appendChild(linkToFeedback);
     }
+    if (buttons[0].textContent.includes("False")) {
+      console.log("skvnwoiin");
+      buttons[2].classList.add("button_off");
+      buttons[3].classList.add("button_off");
+    } else {
+      buttons[2].classList.remove("button_off");
+      buttons[3].classList.remove("button_off");
+    }
     const countingAnswer = function (array) {
-      if (e.target.textContent === array[counter].correct_answer) {
-        answers.corrects.push(e.target.textContent);
-      } else {
-        answers.wrongs.push(e.target.textContent);
+      while (counter <= 9) {
+        if (e.target.textContent === array[counter].correct_answer) {
+          answers.corrects.push(e.target.textContent);
+        } else {
+          answers.wrongs.push(e.target.textContent);
+        }
+        return answers;
       }
-      return answers;
     };
 
-    console.log(countingAnswer(questions));
+    countingAnswer(questions);
   };
 }
